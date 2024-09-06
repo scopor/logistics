@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-    <header class="py-6 px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold text-center">Vinlane Photo Gallery</h1>
+    <header class="pt-20 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-thin text-center hover:text-pink-400">Vinlane Photo Gallery</h1>
     </header>
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div v-if="loading" class="text-center">
