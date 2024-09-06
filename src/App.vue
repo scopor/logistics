@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <header class="py-6 px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold text-center">Unsplash Photo Gallery</h1>
+      <h1 class="text-3xl font-bold text-center">Vinlane Photo Gallery</h1>
     </header>
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div v-if="loading" class="text-center">
@@ -63,7 +63,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import PhotoModal from './PhotoModal.vue'
+import PhotoModal from './components/PhotoModal.vue'
 
 const photos = ref([])
 const loading = ref(true)
