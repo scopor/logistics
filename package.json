@@ -1,0 +1,40 @@
+{
+  "name": "logistics",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "shadcn": "npx shadcn-vue"
+  },
+  "dependencies": {
+    "@radix-icons/vue": "^1.0.0",
+    "@valibot/i18n": "^0.17.0",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/router": "^11.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.438.0",
+    "pinia": "^2.2.2",
+    "radix-vue": "^1.9.5",
+    "shadcn-vue": "^0.10.5",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "valibot": "^0.41.0",
+    "vaul-vue": "^0.2.0",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  }
+}
