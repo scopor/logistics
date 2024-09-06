@@ -2,16 +2,16 @@
   <teleport to="body">
     <transition name="modal">
       <div v-if="show" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" id="photoPrint" @click="closeModal">
-        <div class="relative bg-white rounded-sm shadow-xl max-w-[90vw] max-h-[90vh] overflow-hidden group" @click.stop>
+        <div class="relative bg-white rounded-sm shadow-md max-w-[90vw] max-h-[90vh] overflow-hidden group" @click.stop>
           <button @click="$emit('close')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 hidden group-hover:block z-10" id="closeButton">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div class="bg-white p-8 pb-6 flex items-center justify-center" style="width: auto; height: 80vh;">
+          <div class="bg-white p-8 pb-6 flex items-center justify-center w-auto lg:h-[80vh]">
             <img :src="imageUrl" :alt="imageAlt" class="max-w-full max-h-full object-contain rounded-md" />
           </div>
-          <div class="flex bg-opacity-50 py-8 justify-center items-center text-sm space-x-2">
+          <div class="flex flex-col md:flex-row bg-opacity-50 py-8 justify-center items-center text-sm space-x-2">
             <span>{{ imageAlt }}</span><span> photo by {{ photographer }}</span>
           </div>
           <button
@@ -38,7 +38,7 @@
   </teleport>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   show: Boolean,
   imageUrl: String,
@@ -48,7 +48,7 @@ defineProps({
 
 const emit = defineEmits(['close', 'prev', 'next'])
 
-const closeModal = (event) => {
+const closeModal = (event: any) => {
   if (event.target === event.currentTarget) {
     emit('close')
   }
