@@ -63,7 +63,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import PhotoModal from './components/PhotoModal.vue'
+import PhotoModal from '@/components/PhotoModal.vue'
 
 const photos = ref([])
 const loading = ref(true)
