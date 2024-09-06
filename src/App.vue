@@ -51,9 +51,9 @@
 
     <PhotoModal
         :show="showModal"
-        :image-url="selectedPhoto?.urls.full"
-        :image-alt="selectedPhoto?.description"
-        :photographer="selectedPhoto?.user.name"
+        :image-url="selectedPhoto?.urls?.full || ''"
+        :image-alt="selectedPhoto?.description || ''"
+        :photographer="selectedPhoto?.user?.name || ''"
         @close="closeModal"
         @prev="prevImage"
         @next="nextImage"
