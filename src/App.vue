@@ -13,7 +13,7 @@
       </div>
       <div v-else>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div v-for="photo in paginatedPhotos" :key="photo.id" class="group">
+          <div v-for="photo in photos" :key="photo.id" class="group">
             <div
                 class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
                 @click="openModal(photo)"
@@ -74,6 +74,7 @@ interface UnsplashPhoto {
   description: string;
   user: {
     name: string;
+    total_photos: number;
   };
 }
 
@@ -83,43 +84,39 @@ const error = ref<string | null>(null)
 const showModal = ref(false)
 const selectedPhoto = ref<UnsplashPhoto | null>(null)
 const currentPage = ref(1)
-const photosPerPage = 12
+const perPage = 12
 
 const fetchPhotos = async () => {
   const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-  const apiUrl = `https://api.unsplash.com/users/scopor/photos?per_page=${photosPerPage}&client_id=${UNSPLASH_ACCESS_KEY}`
+  const apiUrl = `https://api.unsplash.com/users/scopor/photos?page=${currentPage.value}&per_page=${perPage}&client_id=${UNSPLASH_ACCESS_KEY}`
 
   try {
     const response = await fetch(apiUrl)
     if (!response.ok) {
-      throw new Error('Failed to fetch photos')
+      photos.value = []
     }
     photos.value = await response.json()
   } catch (err) {
-    error.value = 'Error loading photos. Please try again later.'
     console.error('Error:', err)
+    photos.value = []
   } finally {
     loading.value = false
   }
 }
 
-const paginatedPhotos = computed(() => {
-  const start = (currentPage.value - 1) * photosPerPage
-  const end = start + photosPerPage
-  return photos.value.slice(start, end)
-})
-
-const totalPages = computed(() => Math.ceil(photos.value.length / photosPerPage))
+const totalPages = computed(() => Math.ceil((photos && photos.value[0] ? photos.value[0].user.total_photos : 0) / perPage))
 
 const nextPage = () => {
   if (currentPage.value < totalPages.value) {
     currentPage.value++
+    fetchPhotos()
   }
 }
 
 const prevPage = () => {
   if (currentPage.value > 1) {
     currentPage.value--
+    fetchPhotos()
   }
 }
 
