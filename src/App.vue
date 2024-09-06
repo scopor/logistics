@@ -18,9 +18,9 @@
                 class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
                 @click="openModal(photo)"
             >
-              <img :src="photo.urls.regular" :alt="photo.description" class="w-full h-64 object-cover" />
+              <img :src="photo.urls.regular" :alt="photo?.description" class="w-full h-64 object-cover" />
               <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p class="text-white text-center px-4">{{ photo.description }}</p>
+                <p class="text-white text-center px-4">{{ photo?.description || '' }}</p>
               </div>
             </div>
           </div>
@@ -51,9 +51,9 @@
 
     <PhotoModal
         :show="showModal"
-        :image-url="selectedPhoto?.urls?.full || ''"
+        :image-url="selectedPhoto?.urls.full || ''"
         :image-alt="selectedPhoto?.description || ''"
-        :photographer="selectedPhoto?.user?.name || ''"
+        :photographer="selectedPhoto?.user.name || ''"
         @close="closeModal"
         @prev="prevImage"
         @next="nextImage"
@@ -62,14 +62,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import {computed, onMounted, ref} from 'vue'
 import PhotoModal from '@/components/PhotoModal.vue'
 
-const photos = ref([])
+interface UnsplashPhoto {
+  id: string;
+  urls: {
+    full: string;
+    regular: string;
+  };
+  description: string;
+  user: {
+    name: string;
+  };
+}
+
+const photos = ref<UnsplashPhoto[]>([])
 const loading = ref(true)
-const error = ref(null)
+const error = ref<string | null>(null)
 const showModal = ref(false)
-const selectedPhoto = ref(null)
+const selectedPhoto = ref<UnsplashPhoto | null>(null)
 const currentPage = ref(1)
 const photosPerPage = 12
 
@@ -83,8 +95,7 @@ const fetchPhotos = async () => {
     if (!response.ok) {
       throw new Error('Failed to fetch photos')
     }
-    const data = await response.json()
-    photos.value = data
+    photos.value = await response.json()
   } catch (err) {
     error.value = 'Error loading photos. Please try again later.'
     console.error('Error:', err)
@@ -113,7 +124,7 @@ const prevPage = () => {
   }
 }
 
-const openModal = (photo) => {
+const openModal = (photo: any) => {
   selectedPhoto.value = photo
   showModal.value = true
 }
@@ -124,7 +135,7 @@ const closeModal = () => {
 }
 
 const prevImage = () => {
-  const currentIndex = photos.value.findIndex(photo => photo.id === selectedPhoto.value.id)
+  const currentIndex = photos.value.findIndex(photo => photo.id === selectedPhoto.value!.id)
   if (currentIndex > 0) {
     selectedPhoto.value = photos.value[currentIndex - 1]
   } else {
@@ -133,7 +144,7 @@ const prevImage = () => {
 }
 
 const nextImage = () => {
-  const currentIndex = photos.value.findIndex(photo => photo.id === selectedPhoto.value.id)
+  const currentIndex = photos.value.findIndex(photo => photo.id === selectedPhoto.value!.id)
   if (currentIndex < photos.value.length - 1) {
     selectedPhoto.value = photos.value[currentIndex + 1]
   } else {
