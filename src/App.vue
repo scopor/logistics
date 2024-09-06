@@ -20,7 +20,7 @@
             >
               <img :src="photo.urls.regular" :alt="photo?.description" class="w-full h-64 object-cover" />
               <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p class="text-white text-center px-4">{{ photo?.description || '' }}</p>
+                <p class="text-white text-center px-4">{{ photo.description }}</p>
               </div>
             </div>
           </div>
@@ -87,8 +87,7 @@ const photosPerPage = 12
 
 const fetchPhotos = async () => {
   const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-  const count = 12
-  const apiUrl = `https://api.unsplash.com/users/scopor/photos?per_page=${count}&client_id=${UNSPLASH_ACCESS_KEY}`
+  const apiUrl = `https://api.unsplash.com/users/scopor/photos?per_page=${photosPerPage}&client_id=${UNSPLASH_ACCESS_KEY}`
 
   try {
     const response = await fetch(apiUrl)
