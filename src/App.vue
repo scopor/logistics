@@ -398,13 +398,6 @@ const form = ref({
   message: ''
 })
 
-const handleSubmit = () => {
-  // 这里处理表单提交逻辑
-  console.log('Form submitted:', form.value)
-  // 重置表单
-  form.value = {name: '', email: '', message: ''}
-}
-
 const subscribeNewsletter = () => {
   // 这里处理订阅逻辑
   console.log('Newsletter subscribed')
