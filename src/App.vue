@@ -85,7 +85,7 @@
     <section id="testimonials" class="py-20">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-12 text-center">客户评价</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <Card v-for="testimonial in testimonials" :key="testimonial.name">
             <CardContent class="pt-6">
               <div class="flex items-center mb-4">
