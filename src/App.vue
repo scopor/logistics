@@ -23,9 +23,9 @@
              style="background-image: url('//plus.unsplash.com/premium_photo-1661879449050-069f67e200bd?q=80&w=2622&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
       <div class="absolute inset-0 bg-black bg-opacity-50"></div>
       <div class="container mx-auto px-4 text-center relative z-10 h-96">
-        <h2 class="text-5xl font-bold mb-8 text-white">全国物流解决方案</h2>
+        <h2 class="text-5xl font-bold mb-4 text-white">全国物流解决方案</h2>
         <p class="text-xl mb-8 text-white">快速、可靠、高效的货物运输服务</p>
-        <p class="text-xl lg:mb-8 text-white text-start indent-10">
+        <p class="text-xl mb-4 text-white text-start indent-10">
           粤宝供应链拥有在供应链及物流行业内经验丰富的资深专业团队，能为您在高档鞋服、直销行业、保健食品、日化用品等行业领域提供供应链战略及计划，物流服务等方面提供专业的咨询服务。</p>
         <p class="text-xl lg:mb-8 text-white text-start indent-10">
           通过对物流及供应链流程的优化，可帮助您降低库存，实现服务目标，提升客户服务水平，使得供应链适应和推动企业的发展。</p>
