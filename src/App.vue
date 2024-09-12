@@ -392,17 +392,6 @@ const testimonials = [
   }
 ]
 
-const form = ref({
-  name: '',
-  email: '',
-  message: ''
-})
-
-const subscribeNewsletter = () => {
-  // 这里处理订阅逻辑
-  console.log('Newsletter subscribed')
-}
-
 const partners = [
   {name: '丹麦蓝罐', logo: 'https://www.kjeldsens.com/images/logo_b.jpg?height=60&width=120'},
   {name: 'Apollo', logo: 'https://www.gdybgyl.com/res/static/img/gyl6.png'},
