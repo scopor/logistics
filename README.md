@@ -1,2 +1,1 @@
-# vinlane
-My Photo Gallery.
+A Logistics landing page.
