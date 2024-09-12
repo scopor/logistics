@@ -265,9 +265,8 @@
             <div class="w-28"><img src="https://www.gdybgyl.com/res/static/img/erweima.jpg" alt="二维码"/></div>
           </div>
         </div>
-        <div class="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
-          <p>&copy; 2023 粤宝. 保留所有权利。<a href="https://beian.miit.gov.cn/">备案号：粤ICP&nbsp;备2022072584号</a>
-          </p>
+        <div class="mt-8 pt-8 border-t border-primary-foreground/20 text-center flex flex-col md:flex-row">
+            <span>2024 粤宝供应链. 保留所有权利。</span><span><a href="https://beian.miit.gov.cn/">备案号：粤ICP&nbsp;备2022072584号</a></span>
         </div>
       </div>
     </footer>
