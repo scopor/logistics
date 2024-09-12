@@ -162,8 +162,8 @@
     <section id="tracking" class="py-20">
       <div class="container">
         <h2 class="text-3xl font-bold mb-8 text-center">运单查询</h2>
-        <div class="flex space-x-4">
-          <div class="flex flex-col w-1/3 space-y-8">
+        <div class="flex flex-col lg:flex-row lg:space-x-4">
+          <div class="flex flex-col lg:w-1/3 w-full space-y-8">
             <Card class="h-40">
               <CardHeader>
                 <CardTitle>输入您的运单号</CardTitle>
@@ -179,7 +179,7 @@
                 </form>
               </CardContent>
             </Card>
-            <div v-if="error" class="text-red-500">{{ error }}</div>
+            <div v-if="error" class="text-red-500 text-center">{{ error }}</div>
             <div v-if="trackingResult">
               <Card>
                 <CardHeader>
@@ -196,7 +196,7 @@
               </Card>
             </div>
           </div>
-          <div v-if="trackingStatuses.length > 0" class="w-2/3">
+          <div v-if="trackingStatuses.length > 0" class="lg:w-2/3 w-full lg:mt-0 mt-8">
             <Card>
               <CardHeader>
                 <CardTitle>运单状态</CardTitle>
@@ -365,7 +365,7 @@ const contactUs = [
 ]
 
 const stats = [
-  {title: '服务国家', value: '100+'},
+  {title: '服务城市', value: '100+'},
   {title: '满意客户', value: '10,000+'},
   {title: '准时交付率', value: '99.9%'},
   {title: '年运输量', value: '500万吨'}
@@ -373,22 +373,28 @@ const stats = [
 
 const testimonials = [
   {
-    name: '张三',
-    company: 'ABC 电子公司',
-    quote: '粤宝的服务让我们的国际供应链变得更加高效和可靠。他们的专业团队总是能够快速响应我们的需求。',
+    name: '王经理',
+    company: '某互联网智能家电公司',
+    quote: '粤宝的服务让我们的供应链变得更加高效和可靠。他们的专业团队总是能够快速响应我们的需求。',
     avatar: ''
   },
   {
-    name: '李四',
-    company: 'XYZ 贸易有限公司',
+    name: '张经理',
+    company: '某大型贸易有限公司',
     quote: '自从使用粤宝的仓储管理服务后，我们的库存周转率提高了 30%。他们的解决方案为我们节省了大量成本。',
-    avatar: '//upload.wikimedia.org/wikipedia/commons/6/6c/SVG_Simple_Icon.svg?height=100&width=100'
+    avatar: ''
   },
   {
-    name: '王五',
-    company: '123 食品集团',
+    name: '谢先生',
+    company: '某大型连锁超市',
+    quote: '粤宝的货物运输服务安全可靠。他们帮助我们将产品安全、完好无缺的送达给客户。',
+    avatar: ''
+  },
+  {
+    name: '赵经理',
+    company: '某一线知名食品集团',
     quote: '粤宝的冷链物流服务质量卓越。他们帮助我们将产品安全、新鲜地送达全国各地的客户手中。',
-    avatar: '//upload.wikimedia.org/wikipedia/commons/6/6c/SVG_Simple_Icon.svg?height=100&width=100'
+    avatar: ''
   }
 ]
 
