@@ -238,7 +238,7 @@
     <!-- 页脚 -->
     <footer class="bg-primary text-primary-foreground py-12">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 class="text-xl font-semibold mb-4">粤宝物流供应链</h3>
             <p>全国领先的物流解决方案提供商</p>
