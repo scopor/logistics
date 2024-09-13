@@ -75,7 +75,7 @@
         <h2 class="text-3xl font-bold mb-12 text-center">我们的合作伙伴</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           <div v-for="partner in partners" :key="partner.name" class="flex items-center justify-center">
-            <img :src="partner.logo" :alt="partner.name" class="max-h-16 max-w-full"/>
+            <img :src="partner.logo" :alt="partner.name" class="max-h-32 max-w-full"/>
           </div>
         </div>
       </div>
