@@ -106,7 +106,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-8 md:mb-0">
-            <img src="https://images.unsplash.com/photo-1613690413712-dbe316605644?q=80&w=2659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&height=400&width=600"
+            <img src="https://images.unsplash.com/photo-1613690413712-dbe316605644?q=80&w=2659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                  alt="About 粤宝" class=""/>
           </div>
           <div class="md:w-1/2 md:pl-12">
