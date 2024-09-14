@@ -162,8 +162,8 @@
     <section id="tracking" class="py-20">
       <div class="container">
         <h2 class="text-3xl font-bold mb-8 text-center">运单查询</h2>
-        <div class="flex flex-col lg:flex-row lg:space-x-4">
-          <div class="flex flex-col lg:w-1/3 w-full space-y-8">
+        <div class="flex flex-col lg:flex-row lg:space-x-4" :class="!(trackingResult || error) ? 'justify-center items-center' : ''">
+          <div class="flex flex-col justify-between lg:w-1/3 w-full space-y-8">
             <Card class="h-40">
               <CardHeader>
                 <CardTitle>输入您的运单号</CardTitle>
@@ -187,10 +187,10 @@
                 </CardHeader>
                 <CardContent>
                   <div class="space-y-2">
-                    <p><strong>运单号：</strong>{{ trackingResult.orderid_chr }}</p>
-                    <p><strong>创建时间：</strong>{{ trackingResult.createtime_dt }}</p>
-                    <p><strong>创建人：</strong>{{ trackingResult.createname_vchr }}</p>
-                    <p><strong>部门ID：</strong>{{ trackingResult.createdptid_vchr }}</p>
+                    <p><strong>运单号：</strong>{{ trackingResult?.orderid_chr }}</p>
+                    <p><strong>创建时间：</strong>{{ trackingResult?.createtime_dt }}</p>
+                    <p><strong>创建人：</strong>{{ trackingResult?.createname_vchr }}</p>
+                    <p><strong>部门ID：</strong>{{ trackingResult?.createdptid_vchr }}</p>
                   </div>
                 </CardContent>
               </Card>
