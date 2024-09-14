@@ -4,7 +4,7 @@
     <header
         class="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">粤宝物流供应链</h1>
+        <h1 class="text-2xl font-bold"><a href="/">粤宝物流供应链</a></h1>
         <nav>
           <ul class="flex space-x-4">
             <li><a href="#tracking" class="hover:text-primary">运单查询</a></li>
